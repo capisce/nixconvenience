@@ -1,0 +1,68 @@
+let
+  pkgs = import <nixpkgs> {};
+in (pkgs.buildFHSUserEnv {
+  name = "fhs";
+  targetPkgs = pkgs: (with pkgs; [
+    binutils
+    bison
+    ctags
+    dbus.dev
+    file
+    fontconfig.dev
+    freetype.dev
+    gcc
+    gdb
+    git
+    glib
+    glib.dev
+    gmp
+    gnumake
+    gperf
+    gtk3.dev
+    harfbuzz.dev
+    icu.dev
+    libGL.dev
+    libGLSupported
+    libdrm.dev
+    libiconv
+    libinput.dev
+    libjpeg.dev
+    libpng.dev
+    libtiff
+    libxkbcommon.dev
+    libxml2
+    libxslt
+    mesa_noglu.dev
+    openssl.dev
+    pcre2.dev
+    perl
+    pkgconfig
+    python2
+    sqlite.dev
+    udev.dev
+    vim
+    which
+    zlib.dev
+  ]) ++ (with pkgs.xorg; [
+    libX11.dev
+    libXScrnSaver
+    libXcomposite.dev
+    libXcursor.dev
+    libXdamage.dev
+    libXext.dev
+    libXi.dev
+    libXrandr.dev
+    libXrender.dev
+    libXtst
+    libpciaccess
+    libxcb.dev
+    lndir
+    xcbutil.dev
+    xcbutilimage.dev
+    xcbutilkeysyms.dev
+    xcbutilrenderutil.dev
+    xcbutilwm.dev
+    xproto
+    xrandr
+  ]);
+}).env

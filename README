@@ -1,0 +1,5 @@
+Some convenience utilities for use with nix
+
+qt-fhs.nix:
+Generate a Filesystem Hierarchy Standard sysroot from various nix packages,
+to enable building and developing Qt.
